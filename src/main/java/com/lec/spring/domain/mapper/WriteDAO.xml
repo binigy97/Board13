@@ -7,7 +7,7 @@
 	
 	<select id="select" resultType="com.lec.spring.domain.WriteDTO">
 		SELECT 
-			wr_uid "uid", 
+			wr_uid uid, 
 			wr_subject subject, 
 			wr_content content, 
 			wr_name name, 
@@ -30,7 +30,7 @@
 	</insert>
 	
 	<!-- view.do -->
-	<select id="selectByUid" resultType="com.lec.spring.WriteDTO">
+	<select id="selectByUid" resultType="com.lec.spring.domain.WriteDTO">
 		SELECT 
 			wr_uid uid, wr_subject subject, wr_content content, wr_name name, 
 			wr_viewcnt viewcnt, wr_regdate regDate 
@@ -45,7 +45,7 @@
 		WHERE wr_uid = #{param0}
 	</update>
 	
-	<!--  글 수정 -->
+	<!-- updateOk.do -->
 	<update id="update" flushCache="true"
 		parameterType="com.lec.spring.domain.WriteDTO">
 		
@@ -55,25 +55,9 @@
 				
 	</update>
 	
-	<!--  글 삭제 -->
+	<!-- deleteOk.do -->
 	<delete id="deleteByUid" flushCache="true">
-		DELETE FROM test_write WHERE uid = #{uid}
+		DELETE FROM test_write WHERE wr_uid = #{uid}
 	</delete>
 	
 </mapper> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,24 +1,23 @@
 {
 	"folders": {},
 	"connections": {
-		"mysql8-17ba1b76353-58b59d7c947449ed": {
+		"mysql8-17bce7f6a6d-48b46a101f221d4": {
 			"provider": "mysql",
 			"driver": "mysql8",
-			"name": "mydb",
+			"name": "mydb720",
 			"save-password": true,
 			"read-only": false,
 			"configuration": {
 				"host": "localhost",
 				"port": "3306",
-				"database": "mydb",
-				"url": "jdbc:mysql://localhost:3306/mydb",
+				"database": "mydb720",
+				"url": "jdbc:mysql://localhost:3306/mydb720",
 				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
 				"type": "dev",
 				"properties": {
 					"connectTimeout": "20000",
 					"rewriteBatchedStatements": "true",
-					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2",
-					"allowPublicKeyRetrieval": "TRUE"
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2"
 				},
 				"auth-model": "native",
 				"handlers": {}

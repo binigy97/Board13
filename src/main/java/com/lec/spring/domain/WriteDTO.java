@@ -3,6 +3,9 @@ package com.lec.spring.domain;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 // DTO : Data Transfer Object
 //  DAO 등과 연동하여 데이터를 실어 나르는 객체
 //  필요한 객체(entity) 만큼 작성
@@ -11,6 +14,7 @@ public class WriteDTO {
 	private String subject;  // wr_subject
 	private String content;  // wr_content
 	private String name;  // wr_name
+	@JsonProperty("viewcnt")
 	private int viewCnt;  // wr_viewcnt
 	private LocalDateTime regDate;  // wr_regdate
 
@@ -85,7 +89,8 @@ public class WriteDTO {
 		this.viewCnt = viewCnt;
 	}
 
-
+	
+	@JsonIgnore
 	public LocalDateTime getRegDate() {
 		return regDate;
 	}
@@ -95,6 +100,8 @@ public class WriteDTO {
 		this.regDate = regDate;
 	}
 	
+	
+	@JsonProperty("regdate")
 	public String getRegDateTime() {
 		if(this.regDate == null) return "";
 		return this.regDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"));
